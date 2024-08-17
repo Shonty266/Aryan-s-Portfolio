@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 // import { delay } from 'framer-motion';
+import Resume from '../../assets/Aryan-s Resume.pdf'
+
 
 
 const Navbar = () => {
@@ -58,9 +60,10 @@ const Navbar = () => {
       <Link to='/contact' className='link hover:text-[#a0b1ba] duration-500'>
         Contact
       </Link>
-      <a href='' className='link hover:text-[#a0b1ba] duration-500 hover:font-[22px]'>
-        Resume
-      </a>
+      <a href={Resume} className='link hover:text-[#a0b1ba] duration-500 hover:font-[22px]' target='_blank' rel='noopener noreferrer'>
+  Resume
+</a>
+
     </div>
 
 
@@ -121,10 +124,10 @@ const Navbar = () => {
         <hr className='h-[2px] bg-gray-300 w-[90%]' />
 
 
-        <a href='' className='hover:text-[#a0b1ba] duration-500 py-2'>
-          Resume
-        </a>
-        {/* <hr className='h-1 bg-gray-300 w-[90%]' /> */}
+        <a href={Resume} className='link hover:text-[#a0b1ba] duration-500 hover:font-[22px]' target='_blank' rel='noopener noreferrer'>
+  Resume
+</a>
+        
       </div>
       </div>
       </div>
