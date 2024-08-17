@@ -60,7 +60,7 @@ const Navbar = () => {
       <Link to='/contact' className='link hover:text-[#a0b1ba] duration-500'>
         Contact
       </Link>
-      <a href={Resume} className='link hover:text-[#a0b1ba] duration-500 hover:font-[22px]' target='_blank' rel='noopener noreferrer'>
+      <a href={Resume} className='link hover:text-[#a0b1ba] duration-500' target='_blank' rel='noopener noreferrer'>
   Resume
 </a>
 
@@ -124,10 +124,9 @@ const Navbar = () => {
         <hr className='h-[2px] bg-gray-300 w-[90%]' />
 
 
-        <a href={Resume} className='link hover:text-[#a0b1ba] duration-500 hover:font-[22px]' target='_blank' rel='noopener noreferrer'>
-  Resume
-</a>
-        
+        <a href={Resume} className='hover:text-[#a0b1ba] duration-500 py-2'>
+          Resume
+        </a>
       </div>
       </div>
       </div>
