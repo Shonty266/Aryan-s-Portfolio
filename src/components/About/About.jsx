@@ -49,6 +49,11 @@ const About = () => {
 
   }, []);
 
+  const onRefresh = () => {
+    window.location.href = './';
+  };
+  
+
 
 
   return (

@@ -4,8 +4,7 @@ import React, {useEffect, useRef} from 'react'
 import gsap from 'gsap'
 import contactImage from '../../assets/images/contact.svg'
 import { CgClose } from "react-icons/cg";
-import { useGSAP } from '@gsap/react';
-// import Transition from '../Transition/Transition';
+import { useGSAP } from '@gsap/react'
 
 const Contact = () => {
 
@@ -90,6 +89,8 @@ const Contact = () => {
       });
     }, []);
 
+
+   
   
   return (
     <div className=' relative'>
@@ -101,8 +102,6 @@ const Contact = () => {
         <CgClose className='font-bold text-xl cursor-pointer' onClick={close} />
     </div>
 </div>
-
-
 
         <div className='contact flex gap-14 lg:px-20 px-4 py-10 items-center lg:flex-row flex-col'>
           <div className='flex flex-col gap-4 lg:w-1/2 w-full'>

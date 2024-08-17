@@ -9,7 +9,7 @@ import Contact from './components/Contact/Contact.jsx'
 
 const router = createBrowserRouter([
   {path: '/', element:<App />},
-  {path:'/about', element:<About /> },
+  {path:'/about', element:<About/> },
   {path:'/contact', element:<Contact /> }
 ])
 
