@@ -91,7 +91,7 @@ const Projects = () => {
     onClick={() => filterType('uiux')}
     className={`relative duration-300 font-semibold lg:text-md text-sm flex items-center justify-center overflow-hidden text-[#263238] ${
       activeType === 'uiux' 
-        ? 'bg-[#e6e6e9] shadow-gray-300'
+        ? 'bg-[#e6e6e9] shadow-sm shadow-gray-300'
         : 'bg-[#f9f9fd]  shadow-sm shadow-gray-300'
     } rounded-md py-2 px-4`}
   >
@@ -105,7 +105,7 @@ const Projects = () => {
     onClick={() => filterType('frontend')}
     className={`duration-300 font-semibold lg:text-md text-sm relative z-100 flex items-center justify-center overflow-hidden rounded-md py-2 px-4 text-[#263238] ${
       activeType === 'frontend' 
-        ? 'bg-[#e6e6e9] shadow-gray-300'
+        ? 'bg-[#e6e6e9] shadow-sm shadow-gray-300'
         : 'bg-[#f9f9fd]  shadow-sm shadow-gray-300'
     }`}
   >

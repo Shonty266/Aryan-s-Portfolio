@@ -110,18 +110,18 @@ const Navbar = () => {
         <Link to='/' className='hover:text-[#a0b1ba] duration-500 py-2'>
           Work
         </Link>
-        <hr className='h-[2px] bg-gray-300 w-[90%]' />
+        <hr className='h-[2px] bg-[#a0b1ba] w-[90%]' />
 
         <Link to='/about' className='hover:text-[#a0b1ba] duration-500 py-2'>
           About
         </Link>     
-        <hr className='h-[2px] bg-gray-300 w-[90%]' />
+        <hr className='h-[2px] bg-[#a0b1ba] w-[90%]' />
 
 
         <Link to='/contact' className='hover:text-[#a0b1ba] duration-500 py-2'>
           Contact
         </Link>
-        <hr className='h-[2px] bg-gray-300 w-[90%]' />
+        <hr className='h-[2px] bg-[#a0b1ba] w-[90%]' />
 
 
         <a href={Resume} className='hover:text-[#a0b1ba] duration-500 py-2'>
