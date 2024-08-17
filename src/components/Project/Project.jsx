@@ -34,7 +34,7 @@ const Projects = () => {
         scrollTrigger: {
           trigger: item,
           start: 'top 90%',
-          end: 'top 50%',
+          end: 'top 30%',
           // markers: true,
           toggleActions: 'play none none none',
           scrub: true
