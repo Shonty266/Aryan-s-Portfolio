@@ -60,9 +60,9 @@ const Navbar = () => {
       <Link to='/contact' className='link hover:text-[#a0b1ba] duration-500'>
         Contact
       </Link>
-      <a href={Resume} className='link hover:text-[#a0b1ba] duration-500' target='_blank' rel='noopener noreferrer'>
+      <Link to={Resume} className='link hover:text-[#a0b1ba] duration-500' target='_blank' rel='noopener noreferrer'>
   Resume
-</a>
+</Link>
 
     </div>
 
