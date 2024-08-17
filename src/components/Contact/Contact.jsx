@@ -89,7 +89,8 @@ const Contact = () => {
       });
     }, []);
 
-
+    const location = useLocation();
+    const currentPath = location.pathname;
    
   
   return (
