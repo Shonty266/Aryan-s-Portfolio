@@ -89,6 +89,7 @@ const Contact = () => {
       });
     }, []);
 
+    const [subject, setSubject] = useState(`${name} sent you a message from Portfolio`);
    
   
   return (
@@ -119,6 +120,7 @@ const Contact = () => {
       name="name"
       required
     />
+    <input type="hidden" name="subject" value={subject} />
     <input
       type="email"
       className="w-full h-[50px] pl-6 outline-none rounded-md border border-gray-300"
