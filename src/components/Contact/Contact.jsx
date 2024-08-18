@@ -1,6 +1,6 @@
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-import React, {useEffect, useRef} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import gsap from 'gsap'
 import contactImage from '../../assets/images/contact.svg'
 import { CgClose } from "react-icons/cg";
@@ -89,14 +89,21 @@ const Contact = () => {
       });
     }, []);
 
-    const [subject, setSubject] = useState(`${name} sent you a message from Portfolio`);
-   
+    const [name, setName] = useState('');
+    const [subject, setSubject] = useState('');
+  
+    const handleNameChange = (event) => {
+      const newName = event.target.value;
+      setName(newName);
+      setSubject(`${newName} sent you a message from Portfolio`);
+    };
+    
   
   return (
-    <div className=' relative'>
+    <div>
       <Navbar />
        
-       <div className='absolute right-10 lg:bottom-10 top-20 rounded-lg py-2 border-2 border-[#263238] hidden items-center justify-center gap-4 px-4 transition duration-500 ease-in-out' id='alert'>
+       <div className='absolute right-10 top-20 rounded-lg py-2 border-2 border-[#263238] items-center justify-center gap-4 px-4 transition duration-500 ease-in-out hidden' id='alert' >
     <div>{result}</div>
     <div>
         <CgClose className='font-bold text-xl cursor-pointer' onClick={close} />
@@ -118,6 +125,7 @@ const Contact = () => {
       className="w-full h-[50px] pl-6 outline-none rounded-md border border-gray-300"
       placeholder="Enter Your Name"
       name="name"
+      onChange={handleNameChange}
       required
     />
     <input type="hidden" name="subject" value={subject} />
