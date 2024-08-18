@@ -49,7 +49,7 @@ const Navbar = () => {
 
   return (
     <div> 
-        <div className='navbar flex justify-between items-center py-8 lg:px-20 px-10 relative z-50'>
+        <div className='navbar flex justify-between items-center py-8 lg:px-20 px-10 relative lg:z-10 z-50'>
         <div className='nav-left font-navLinks gap-5 text-[17px] font-semibold hidden lg:flex'>
       <Link to='/' className='link hover:text-[#a0b1ba] duration-500'>
         Work

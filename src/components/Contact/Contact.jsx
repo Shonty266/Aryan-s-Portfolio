@@ -5,6 +5,8 @@ import gsap from 'gsap'
 import contactImage from '../../assets/images/contact.svg'
 import { CgClose } from "react-icons/cg";
 import { useGSAP } from '@gsap/react'
+import Scroll from '../Scroll/Scroll'
+
 
 const Contact = () => {
 
@@ -98,9 +100,28 @@ const Contact = () => {
       setSubject(`${newName} sent you a message from Portfolio`);
     };
     
+    const mainRef = useRef(null);
+    const cursorRef = useRef(null);
+  
+    const handleMouseMove = (event) => {
+      const newX = event.clientX + 4; // Adjust position by adding 10px to the X coordinate
+      const newY = event.clientY + 8; // Adjust position by adding 10px to the Y coordinate
+  
+      gsap.to(cursorRef.current, {
+        x: newX,
+        y: newY,
+        duration: 0.5,
+        ease: 'power2.out',
+      });
+    };
   
   return (
-    <div>
+    <div ref={mainRef}
+    onMouseMove={handleMouseMove}>
+      <div id='cursor' className='w-4 h-4 bg-black lg:fixed hidden lg:block rounded-full z-50 x-10 y-10' ref={cursorRef}></div>
+
+      <Scroll />
+
       <Navbar />
        
        <div className='absolute right-10 top-20 rounded-lg py-2 border-2 border-[#263238] items-center justify-center gap-4 px-4 transition duration-500 ease-in-out hidden' id='alert' >

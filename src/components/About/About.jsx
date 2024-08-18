@@ -2,8 +2,10 @@ import React, {useEffect, useRef} from 'react'
 import Navbar from '../Navbar/Navbar'
 import aboutImage from '../../assets/images/about.svg'
 import Footer from '../Footer/Footer'
+import Scroll from '../Scroll/Scroll'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+
 
 
 
@@ -49,12 +51,31 @@ const About = () => {
 
   }, []);
 
+  const mainRef = useRef(null);
+    const cursorRef = useRef(null);
+  
+    const handleMouseMove = (event) => {
+      const newX = event.clientX + 4; // Adjust position by adding 10px to the X coordinate
+      const newY = event.clientY + 8; // Adjust position by adding 10px to the Y coordinate
+  
+      gsap.to(cursorRef.current, {
+        x: newX,
+        y: newY,
+        duration: 0.5,
+        ease: 'power2.out',
+      });
+    };
+
  
   return (
-    <div>
+    <div ref={mainRef}
+    onMouseMove={handleMouseMove}>
+      <div id='cursor' className='w-4 h-4 bg-black lg:fixed hidden lg:block rounded-full z-50' ref={cursorRef}></div>
+      
+      <Scroll />
      
         <Navbar />
-        <div className='about flex gap-14 lg:px-20 px-4 py-10 items-center lg:flex-row  flex-col'>
+        <div className='about flex gap-14 lg:px-20 px-4 py-10 items-center lg:flex-row flex-col cursor-default'>
           <div className='flex flex-col gap-4 lg:w-1/2'>
             <h1 className='text-4xl font-bold text-center lg:text-left text-[#263238]' 
             ref={(el) => {

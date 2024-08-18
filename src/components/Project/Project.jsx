@@ -63,7 +63,7 @@ const Projects = () => {
     };
   
   return (
-    <div className=' flex justify-center pt-36'>
+    <div className=' flex justify-center pt-36 cursor-default'>
 
 <div className='projects py-10 lg:w-[70%] px-4 ' id="project">
 <div className='flex flex-col justify-center items-center'>
@@ -126,7 +126,7 @@ const Projects = () => {
             <img
               src={item.image}
               alt={item.name}
-              className='w-full object-cover rounded-t-lg hover:scale-105 duration-300 cursor-pointer hover:shadow-lg shadow-black'
+              className='w-full object-cover rounded-t-lg hover:scale-105 duration-300 hover:shadow-lg shadow-black'
             />
             <div className='flex flex-col justify-between px-4 pb-4 pt-8'>
               <div className='flex gap-4 items-center'>
@@ -134,7 +134,7 @@ const Projects = () => {
                   <p className='font-bold lg:text-7xl text-4xl text-[#cfd8dc]'>0{item.id}</p>
                 </div>
                 <div>
-                  <p className='font-bold lg:text-4xl text-2xl cursor-pointer text-[#263238]'>{item.name}</p>
+                  <p className='font-bold lg:text-4xl text-2xl text-[#263238]'>{item.name}</p>
                   <p className='lg:text-md text-md text-[#a0b1ba] font-semibold'>{item.projectType}</p>
                 </div>
               </div>
