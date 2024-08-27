@@ -9,7 +9,7 @@ import ReceiptImage from '../assets/images/uiux/Receipt.png';
 export const data = [
   {
     id: 6,
-    name: 'Landing Page Design for Digital Receipt Generator',
+    name: 'Digital Receipt Generator',
     category: 'uiux',
     image: ReceiptImage,
     projectType: 'UI/UX Design Project',
