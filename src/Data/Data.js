@@ -3,10 +3,21 @@ import FurnitureImage from '../assets/images/frontend/Furniture.png';
 import GoGlobeFImage from '../assets/images/frontend/GoGlobe.png';
 import GoGlobeImage from '../assets/images/uiux/Go Globe.png';
 import DecoluxeImage from '../assets/images/uiux/Decoluxe.png';
+import ReceiptImage from '../assets/images/uiux/Receipt.png';
 
 
 export const data = [
-    
+  {
+    id: 6,
+    name: 'Landing Page Design for Digital Receipt Generator',
+    category: 'uiux',
+    image: ReceiptImage,
+    projectType: 'UI/UX Design Project',
+    description: 'This is a landing page design for a SaaS website that generates online receipts.', 
+    link:'https://www.behance.net/gallery/205200879/Landing-Page-Design-for-Digital-Receipt-Generator',
+    location:'View on Behance',
+
+  },
   {
     id: 5,
     name: 'Go Globe',
@@ -15,7 +26,7 @@ export const data = [
     projectType: 'Frontend Project',
     description: 'Go Globe is a single-page application for the imaginary travel brand Go Globe, which I previously designed.', 
     link:'https://go-globe.netlify.app/',
-    location:'See Live Project',
+    location:'View Live Project',
 
   },
       {
@@ -48,7 +59,7 @@ export const data = [
         projectType: 'Frontend Project',
         description: 'This website serves as the frontend landing page for an imaginary ecommerce website called Furniture.', 
         link:'https://furnituress.netlify.app/',
-        location:'See Live Project',
+        location:'View Live Project',
 
       },
 
@@ -60,7 +71,7 @@ export const data = [
         projectType: 'Frontend Project',
         description: 'This website serves as the frontend landing page for an imaginary hotel called Belmond hotel.', 
         link:'https://belmond-hotel.netlify.app/',
-        location:'See Live Project',
+        location:'View Live Project',
 
 },
 
