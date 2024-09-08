@@ -16,6 +16,8 @@ export const data = [
     description: 'This is a landing page design for a SaaS website that generates online receipts.', 
     link:'https://www.behance.net/gallery/205200879/Landing-Page-Design-for-Digital-Receipt-Generator',
     location:'View on Behance',
+    skills: ['Figma']
+
 
   },
   {
@@ -27,6 +29,8 @@ export const data = [
     description: 'Go Globe is a single-page application for the imaginary travel brand Go Globe, which I previously designed.', 
     link:'https://go-globe.netlify.app/',
     location:'View Live Project',
+    skills: ['React', 'TailwindCSS','JavaScript', 'GSAP', 'Swiper.js']
+
 
   },
       {
@@ -38,6 +42,8 @@ export const data = [
         description: 'Decoluxe offers a curated selection of premium furniture with an intuitive app experience for creating your dream home.', 
         link:'https://www.behance.net/gallery/204747987/Decoluxe-Furnitures-UIUX-Design',
         location:'View on Behance',
+        skills: ['Figma', 'Prototyping']
+
       },
 
       {
@@ -49,6 +55,8 @@ export const data = [
         description: 'GoGlobe is a website that masterfully blends vibrant brand identity with user-centric engagement, creating an immersive travel experience.', 
         link:'https://www.behance.net/gallery/203676941/Go-Globe-Case-Study',
         location:'View on Behance',
+        skills: ['Figma', 'Prototyping']
+
 
       },
       {
@@ -60,6 +68,8 @@ export const data = [
         description: 'This website serves as the frontend landing page for an imaginary ecommerce website called Furniture.', 
         link:'https://furnituress.netlify.app/',
         location:'View Live Project',
+        skills: ['HTML', 'TailwindCSS','JavaScript', 'GSAP', 'Swiper.js']
+
 
       },
 
@@ -72,6 +82,7 @@ export const data = [
         description: 'This website serves as the frontend landing page for an imaginary hotel called Belmond hotel.', 
         link:'https://belmond-hotel.netlify.app/',
         location:'View Live Project',
+        skills: ['HTML', 'TailwindCSS','JavaScript', 'GSAP', 'Swiper.js']
 
 },
 

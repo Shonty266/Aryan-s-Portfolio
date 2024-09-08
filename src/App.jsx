@@ -28,7 +28,7 @@ const App = () => {
   return (
     <div className='main' id='main' ref={mainRef}
     onMouseMove={handleMouseMove}>
-      <div id='cursor' className='w-4 h-4 bg-black fixed lg:block hidden rounded-full z-50' ref={cursorRef}></div>
+      <div id='cursor' className='w-4 h-4 bg-[#263238] fixed lg:block hidden rounded-full z-50' ref={cursorRef}></div>
       <Scroll />
       <Navbar/> 
       <Hero />
