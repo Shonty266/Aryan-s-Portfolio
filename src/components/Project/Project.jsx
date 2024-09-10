@@ -53,7 +53,7 @@ const Projects = () => {
     <div className='flex justify-center pt-36 cursor-default lg:px-10'>
       <div className='projects py-10 lg:w-full px-4' id="project">
         <div className='flex flex-col justify-center items-center'>
-          <h1 className='text-5xl py-2 font-bold tracking-[2px] text-[#263238]'>Projects</h1>
+          <h1 className='text-5xl py-2 font-bold tracking-[2px]'>Projects</h1>
           <hr className='hr lg:w-[30%] w-[80%] h-1 rounded-full mt-1 bg-[#a0b1ba]' id='hr' />
         </div>
         
@@ -63,28 +63,31 @@ const Projects = () => {
               setActiveType(''); 
               setProjects(data);  
             }}
-            className={`duration-300 font-semibold lg:text-md text-md py-1 px-4 rounded-md text-[#263238] ${
-              activeType === '' ? 'bg-[#e6e6e9]' : 'bg-[#f9f9fd] border-2 border-[#263238]'
-            } border-2 border-[#263238]`}
+            className={`duration-300 font-semibold lg:text-md text-md py-1 px-4 rounded-md  ${
+              activeType === '' ? 'bg-[var(--background-button)] text-[var(--text-skill-active)] ' : 'bg-[var(--background-button-bg)] '
+            }`}
+            style={{
+              border: `2px solid var(--filter-button)`,
+            }}
           >
             View All
           </button>
           <button
             onClick={() => filterType('frontend')}
-            className={`duration-300 font-semibold lg:text-md text-sm relative z-100 flex items-center justify-center overflow-hidden rounded-md py-2 px-4 text-[#263238] ${
+            className={`duration-300 font-semibold lg:text-md text-sm relative z-100 flex items-center justify-center overflow-hidden rounded-md py-2 px-4 ${
               activeType === 'frontend' 
-                ? 'bg-[#e6e6e9] shadow-sm shadow-gray-300'
-                : 'bg-[#f9f9fd] shadow-sm shadow-gray-300'
+                ? 'bg-[var(--background-button)] shadow-sm shadow-gray-300 text-[var(--text-skill-active)]'
+                : 'bg-[var(--background-button-bg)] shadow-sm shadow-gray-300'
             }`}
           >
             Frontend Projects
           </button>
           <button
             onClick={() => filterType('uiux')}
-            className={`relative duration-300 font-semibold lg:text-md text-sm flex items-center justify-center overflow-hidden text-[#263238] ${
+            className={`relative duration-300 font-semibold lg:text-md text-sm flex items-center justify-center overflow-hidden ${
               activeType === 'uiux' 
-                ? 'bg-[#e6e6e9] shadow-sm shadow-gray-300'
-                : 'bg-[#f9f9fd] shadow-sm shadow-gray-300'
+                ? 'bg-[var(--background-button)] shadow-sm shadow-gray-300 text-[var(--text-skill-active)]'
+                : 'bg-[var(--background-button-bg)] shadow-sm shadow-gray-300'
             } rounded-md py-2 px-4`}
           >
             UI/UX Design
@@ -98,7 +101,8 @@ const Projects = () => {
             {projects.map((item, index) => (
               <div
                 key={index}
-                className='border shadow-lg rounded-lg overflow-hidden p-4 bg-white'
+                className='project shadow-lg rounded-lg overflow-hidden p-4'
+                style={{ backgroundColor: 'var(--project-bg)' }}
               >
                 <img
                   src={item.image}
@@ -111,29 +115,30 @@ const Projects = () => {
                       <p className='font-bold lg:text-7xl text-4xl text-[#cfd8dc]'>0{item.id}</p>
                     </div>
                     <div className='flex flex-col flex-wrap'>
-                      <p className='font-bold lg:text-4xl text-2xl text-[#263238]'>{item.name}</p>
+                      <p className='font-bold lg:text-4xl text-2xl'>{item.name}</p>
                       <p className='lg:text-md text-md text-[#a0b1ba] font-semibold lg:mt-2'>{item.projectType}</p>
                     </div>
                   </div>
                   <div className='flex flex-wrap gap-2 mt-2'>
-                      {(item.skills || []).map((skill, idx) => (
-                        <span
-                          key={idx}
-                          className='bg-[#f9f9fd] text-[#263238] font-semibold text-sm lg:px-5 px-3 py-1 rounded-full flex-wrap'
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
+  {(item.skills || []).map((skill, idx) => (
+    <span
+      key={idx}
+      className='bg-[var(--skills-bg)] font-semibold text-sm lg:px-5 px-3 py-1 rounded-full flex-wrap'
+    >
+      {skill}
+    </span>
+  ))}
+</div>
+
                   <div className='flex flex-row pb-4 lg:items-center items-end'>
-                    <p className='mt-4 lg:text-lg text-md text-[#4A5E68]'>{item.description}</p>
+                    <p className='mt-4 lg:text-lg text-md'>{item.description}</p>
                     
                     <div className='tooltip-container relative inline-block pl-2 mt-4'>
                       <a
                         href={item.link}
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='px-2 py-2 bg-none text-[#a0b1ba] hover:bg-[#d7dee2] border-[#dee4e7] border-2 duration-500 rounded-lg cursor-pointer inline-block'
+                        className='px-2 py-2 bg-none text-[var-(--text-skill)] hover:bg-gray-300 border-gray-300 border-2 duration-500 rounded-lg cursor-pointer inline-block'
                       >
                         <MdArrowOutward className='lg:text-4xl text-2xl' />
                       </a>

@@ -47,3 +47,73 @@ body{
     display: inline-block;
   }
 
+
+  /* Define default light theme */
+:root {
+    --background-color: #F4F4F6;
+    --text-color: #263238;
+    --filter-button: #263238;
+    --background-button: #e6e6e9;
+    --background-button-bg: #f9f9fd;
+    --skills-bg: #f9f9fd;
+    --cursor-bg: #263238;
+    --hover-bg: #e6e6e9;
+    --project-bg:#fff;
+    --theme-bg:#353535;
+    --text-skill: #f9f9fd;
+    --text-skill-active: #263238;
+    
+    
+    
+}
+
+.dark {
+    --background-color: #0F0F0F;
+    --text-color: #ececec;
+    --project-bg:#272727;
+    --filter-button: #e6e6e9;
+    --background-button-bg:#242424;
+    --background-button: #F1F1F1;
+    --skills-bg: #353535;
+    --cursor-bg:#e6e6e9;
+    --hover-bg: #ececec;
+    --text-skill-active: #263238;
+    --text-skill: #f9f9fd;
+    --theme-bg:#fff;
+
+  }
+  
+  /* Apply the theme to the body */
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  
+  /* Dark mode switch styling */
+  .dark_mode {
+    display: flex;
+    align-items: center;
+  }
+  
+  .dark_mode_input {
+    display: none; /* Hide default checkbox */
+  }
+  
+  .dark_mode_label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+  }
+  
+  .dark_mode_input:checked + .dark_mode_label .icon {
+    transform: rotate(360deg);
+  }
+  

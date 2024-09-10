@@ -118,7 +118,7 @@ const Contact = () => {
   return (
     <div ref={mainRef}
     onMouseMove={handleMouseMove}>
-      <div id='cursor' className='w-4 h-4 bg-black lg:fixed hidden lg:block rounded-full z-50 x-10 y-10' ref={cursorRef}></div>
+      <div id='cursor' className='w-4 h-4 bg-[var(--cursor-bg)] lg:fixed hidden lg:block rounded-full z-50 x-10 y-10' ref={cursorRef}></div>
 
       <Scroll />
 
@@ -133,7 +133,7 @@ const Contact = () => {
 
         <div className='contact flex gap-14 lg:px-20 px-4 py-10 items-center lg:flex-row flex-col'>
           <div className='flex flex-col gap-4 lg:w-1/2 w-full'>
-            <h1 className='text-4xl font-bold text-center lg:text-left text-[#263238]' 
+            <h1 className='text-4xl font-bold text-center lg:text-left' 
             ref={(el) => {
               if (el) textRefs.current[0] = el;
             }}

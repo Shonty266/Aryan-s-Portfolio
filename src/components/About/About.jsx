@@ -70,20 +70,20 @@ const About = () => {
   return (
     <div ref={mainRef}
     onMouseMove={handleMouseMove}>
-      <div id='cursor' className='w-4 h-4 bg-black lg:fixed hidden lg:block rounded-full z-50' ref={cursorRef}></div>
+      <div id='cursor' className='w-4 h-4 bg-[var(--cursor-bg)] lg:fixed hidden lg:block rounded-full z-50' ref={cursorRef}></div>
       
       <Scroll />
      
         <Navbar />
         <div className='about flex gap-14 lg:px-20 px-4 py-10 items-center lg:flex-row flex-col cursor-default'>
           <div className='flex flex-col gap-4 lg:w-1/2'>
-            <h1 className='text-4xl font-bold text-center lg:text-left text-[#263238]' 
+            <h1 className='text-4xl font-bold text-center lg:text-left' 
             ref={(el) => {
               if (el) textRefs.current[0] = el;
             }}
           >A Bit About Me</h1>
           
-          <div className='flex flex-col gap-4 text-justify text-[#455A64] '>
+          <div className='flex flex-col gap-4 text-justify '>
           <p>
           <span className='font-bold'>Hello there!</span> <span className='wave'>👋</span> Welcome to my <span className='font-bold'>Portfolio.</span> As an enthusiastic beginner, I’m diving headfirst into the world of UI/UX Design and Web Development, with a passion for crafting captivating digital experiences. 💻 I’m currently honing my front-end skills with<span className='font-bold'> HTML, CSS, JavaScript, and React,</span> and I’m also exploring<span className='font-bold'> Figma </span>  to take my UI/UX designs to the next level. 🚀
 My focus is on bringing user-centric design principles to life, creating intuitive and visually stunning interfaces that truly engage users. 🎨🌟🔧 Let’s create something amazing together!

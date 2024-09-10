@@ -2,6 +2,7 @@ import React ,{ useState, useEffect } from 'react'
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin, FaGithubSquare, FaBehanceSquare } from "react-icons/fa";
 import { IoIosArrowUp } from 'react-icons/io';
+import DarkMode from '../DarkMode/DarkMode';
 
 
 const Footer = () => {
@@ -33,8 +34,8 @@ const Footer = () => {
   return (
     <div>
         <div className='w-full flex flex-col items-center gap-4 justify-center py-10'>
-
-        <div className='text-2xl flex gap-8'>
+          <DarkMode />
+        <div className='text-2xl flex gap-8 mt-2'>
 
         <a href="mailto:work.aryan26@gmail.com" target="_blank"
           rel="noopener noreferrer" className='hover:text-[#a0b1ba] duration-500'><MdEmail /></a>
