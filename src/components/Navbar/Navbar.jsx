@@ -105,7 +105,7 @@ const Navbar = () => {
         
 
 <div 
-  className={`menu font-navLinks text-[17px] absolute w-[90%] font-bold flex flex-col items-center shadow-md bg-[#f9f9fd] rounded-lg z-40 duration-500 ease-in-out transform ${nav ? 'top-24 opacity-100 left-1/2 -translate-x-1/2' : 'top-[-200%] opacity-0 left-1/2 -translate-x-1/2'} py-2 rounded-lg`}
+  className={`menu font-navLinks text-[17px] absolute w-[90%] font-bold flex flex-col items-center shadow-md bg-[var(--project-bg)] rounded-lg z-40 duration-500 ease-in-out transform ${nav ? 'top-24 opacity-100 left-1/2 -translate-x-1/2' : 'top-[-200%] opacity-0 left-1/2 -translate-x-1/2'} py-2 rounded-lg`}
 >
         <Link to='/' className='hover:text-[#a0b1ba] duration-500 py-2'>
           Work
