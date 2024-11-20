@@ -82,7 +82,7 @@ const tl = gsap.timeline()
             if (el) textRefs.current[1] = el;
           }}
         >
-          I am a UI/UX Designer & Frontend Developer based in Gujarat, India.
+          I am a Frontend Developer &  UI/UX Designer based in Gujarat, India.
         </h2>
         <h3 className="intro-text text-[#a0b1ba] font-semibold mt-4">
           Scroll down to see my work!

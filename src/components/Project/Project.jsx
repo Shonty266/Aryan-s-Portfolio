@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { data } from '../../Data/Data.js';
+import { data } from '../../Data/Data.jsx';
 import './project.css';
 import { MdArrowOutward } from "react-icons/md";
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';
+import { FaLock } from "react-icons/fa";
+import HomeVoyage from "../../assets/images/uiux/HomeVoyage.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,7 +66,7 @@ const Projects = () => {
               setProjects(data);  
             }}
             className={`duration-300 font-semibold lg:text-md text-md py-1 px-4 rounded-md  ${
-              activeType === '' ? 'bg-[var(--background-button)] text-[var(--text-skill-active)] ' : 'bg-[var(--background-button-bg)] '
+              activeType === '' ? 'bg-[var(--background-button)] text-[var(--text-skill-active)] shadow-black' : 'bg-[var(--background-button-bg)] shadow-black '
             }`}
             style={{
               border: `2px solid var(--filter-button)`,
@@ -76,8 +78,8 @@ const Projects = () => {
             onClick={() => filterType('frontend')}
             className={`duration-300 font-semibold lg:text-md text-sm relative z-100 flex items-center justify-center overflow-hidden rounded-md py-2 px-4 ${
               activeType === 'frontend' 
-                ? 'bg-[var(--background-button)] shadow-sm shadow-gray-300 text-[var(--text-skill-active)]'
-                : 'bg-[var(--background-button-bg)] shadow-sm shadow-gray-300'
+                ? 'bg-[var(--background-button)] shadow-sm shadow-gray-200  text-[var(--text-skill-active)]'
+                : 'bg-[var(--background-button-bg)] shadow-sm shadow-gray-200'
             }`}
           >
             Frontend Projects
@@ -86,8 +88,8 @@ const Projects = () => {
             onClick={() => filterType('uiux')}
             className={`relative duration-300 font-semibold lg:text-md text-sm flex items-center justify-center overflow-hidden ${
               activeType === 'uiux' 
-                ? 'bg-[var(--background-button)] shadow-sm shadow-gray-300 text-[var(--text-skill-active)]'
-                : 'bg-[var(--background-button-bg)] shadow-sm shadow-gray-300'
+                ? 'bg-[var(--background-button)] shadow-sm shadow-gray-200  text-[var(--text-skill-active)]'
+                : 'bg-[var(--background-button-bg)] shadow-sm shadow-gray-200'
             } rounded-md py-2 px-4`}
           >
             UI/UX Design
@@ -95,9 +97,12 @@ const Projects = () => {
           
          
         </div>
+      
+
 
         <div className='w-full flex justify-center items-center ' id='projects'>
           <div className='project-item grid grid-cols-1 lg:grid-cols-2 gap-10 pt-4 w-full '>
+          
             {projects.map((item, index) => (
               <div
                 key={index}

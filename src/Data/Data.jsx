@@ -4,9 +4,42 @@ import GoGlobeFImage from '../assets/images/frontend/GoGlobe.png';
 import GoGlobeImage from '../assets/images/uiux/Go Globe.png';
 import DecoluxeImage from '../assets/images/uiux/Decoluxe.png';
 import ReceiptImage from '../assets/images/uiux/Receipt.png';
+import HomeVoyageImage from '../assets/images/uiux/HomeVoyage.png';
+import { FaCog } from 'react-icons/fa'; 
+import React from 'react';
 
 
 export const data = [
+  {
+    id: 8,
+    name: 'HomeVoyage Landing Page',
+    category: 'frontend',
+    image: HomeVoyageImage,
+    projectType: 'Frontend Project',
+    description: 'This is a landing page currently being developed in React for an imaginary real estate website, and it is still in the development stage.', 
+    link: '#',  // Placeholder link as it's still in development
+    location: (
+      <div className="flex items-center gap-2">
+        <span>Currently in Development</span>
+        <FaCog className="animate-spin mr-2 text-xl" /> {/* Spinning cog icon */}
+      </div>
+    ),
+    skills: ['React', 'TailwindCSS', 'GSAP']
+  },
+ 
+  {
+    id: 7,
+    name: 'Home Voyage Landing Page',
+    category: 'uiux',
+    image: HomeVoyageImage,
+    projectType: 'UI/UX Design Project',
+    description: 'This is a landing page design for an imaginary real estate website that connects users with their dream properties effortlessly.', 
+    link:'https://www.behance.net/gallery/210294549/Home-Voyage-Real-Estate-Landing-Page-Design',
+    location:'View on Behance',
+    skills: ['Figma']
+
+
+  },
   {
     id: 6,
     name: 'Digital Receipt Generator',
