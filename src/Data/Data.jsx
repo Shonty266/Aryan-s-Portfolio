@@ -12,7 +12,7 @@ import React from 'react';
 export const data = [
   {
     id: 8,
-    name: 'HomeVoyage Landing Page',
+    name: 'Home Voyage Landing Page',
     category: 'frontend',
     image: HomeVoyageImage,
     projectType: 'Frontend Project',
@@ -29,7 +29,7 @@ export const data = [
  
   {
     id: 7,
-    name: 'Home Voyage Landing Page',
+    name: 'Home Voyage Landing Page Design',
     category: 'uiux',
     image: HomeVoyageImage,
     projectType: 'UI/UX Design Project',
