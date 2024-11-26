@@ -17,14 +17,10 @@ export const data = [
     image: HomeVoyageImage,
     projectType: 'Frontend Project',
     description: 'This is a landing page currently being developed in React for an imaginary real estate website, and it is still in the development stage.', 
-    link: '#',  // Placeholder link as it's still in development
-    location: (
-      <div className="flex items-center gap-2">
-        <span>Currently in Development</span>
-        <FaCog className="animate-spin mr-2 text-xl" /> {/* Spinning cog icon */}
-      </div>
-    ),
-    skills: ['React', 'TailwindCSS', 'GSAP']
+    link: 'https://homevoyage.netlify.app/',  // Placeholder link as it's still in development
+    location:'View Live Project',
+   
+    skills: ['HTML', 'TailwindCSS', 'CSS' , 'JavaScript' ,'GSAP', 'Swiper.js']
   },
  
   {
