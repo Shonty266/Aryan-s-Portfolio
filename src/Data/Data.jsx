@@ -16,7 +16,7 @@ export const data = [
     category: 'frontend',
     image: HomeVoyageImage,
     projectType: 'Frontend Project',
-    description: 'This is a landing page currently being developed in React for an imaginary real estate website, and it is still in the development stage.', 
+    description: 'This is a a responsive landing page for an imaginary Brand Home Voyage, a real estate brand that specializes in buying, selling, and renting properties.', 
     link: 'https://homevoyage.netlify.app/',  // Placeholder link as it's still in development
     location:'View Live Project',
    
