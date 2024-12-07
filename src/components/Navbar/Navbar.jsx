@@ -51,61 +51,96 @@ const Navbar = () => {
     <div> 
         <div className='navbar flex justify-between items-center py-8 lg:px-20 px-10 relative lg:z-10 z-50'>
         <div className='nav-left font-navLinks gap-5 text-[17px] font-semibold hidden lg:flex'>
-      <Link to='/' className='link hover:text-[#a0b1ba] duration-500'>
-        Work
+      <Link to='/' className='link hover:text-[#a0b1ba] duration-500 relative group'>
+        <span className='block relative'>
+          Work
+          <span className='absolute left-0 -bottom-1 w-0 h-[2px] bg-[#a0b1ba] transition-all duration-500 group-hover:w-full'></span>
+          <span className='absolute right-0 -top-1 w-0 h-[2px] bg-[#a0b1ba] transition-all duration-500 group-hover:w-full'></span>
+        </span>
       </Link>
-      <Link to='/about' className='link hover:text-[#a0b1ba] duration-500'>
-        About
+      <Link to='/about' className='link hover:text-[#a0b1ba] duration-500 relative group'>
+        <span className='block relative'>
+          About
+          <span className='absolute left-0 -bottom-1 w-0 h-[2px] bg-[#a0b1ba] transition-all duration-500 group-hover:w-full'></span>
+          <span className='absolute right-0 -top-1 w-0 h-[2px] bg-[#a0b1ba] transition-all duration-500 group-hover:w-full'></span>
+        </span>
       </Link>
-      <Link to='/contact' className='link hover:text-[#a0b1ba] duration-500'>
-        Contact
+      <Link to='/contact' className='link hover:text-[#a0b1ba] duration-500 relative group'>
+        <span className='block relative'>
+          Contact
+          <span className='absolute left-0 -bottom-1 w-0 h-[2px] bg-[#a0b1ba] transition-all duration-500 group-hover:w-full'></span>
+          <span className='absolute right-0 -top-1 w-0 h-[2px] bg-[#a0b1ba] transition-all duration-500 group-hover:w-full'></span>
+        </span>
       </Link>
-      <Link to={Resume} className='link hover:text-[#a0b1ba] duration-500' target='_blank' rel='noopener noreferrer'>
-  Resume
-</Link>
-
+      <Link to={Resume} className='link hover:text-[#a0b1ba] duration-500 relative group' target='_blank' rel='noopener noreferrer'>
+        <span className='block relative'>
+          Resume
+          <span className='absolute left-0 -bottom-1 w-0 h-[2px] bg-[#a0b1ba] transition-all duration-500 group-hover:w-full'></span>
+          <span className='absolute right-0 -top-1 w-0 h-[2px] bg-[#a0b1ba] transition-all duration-500 group-hover:w-full'></span>
+        </span>
+      </Link>
     </div>
 
 
-<Link to="/" className='animated-name text-3xl font-bold tracking-[2px] text-center hover:text-[#a0b1ba] duration-500'>
-      <span>A</span>
-      <span>R</span>
-      <span>Y</span>
-      <span>A</span>
-      <span>N</span>
+<Link to="/" className='animated-name text-3xl font-bold tracking-[2px] text-center duration-500'>
+      <span className='inline-block hover:text-[var(--hover-bg)] transition-all duration-300 hover:translate-y-[-2px]'>A</span>
+      <span className='inline-block hover:text-[var(--hover-bg)] transition-all duration-300 hover:translate-y-[-2px]'>R</span>
+      <span className='inline-block hover:text-[var(--hover-bg)] transition-all duration-300 hover:translate-y-[-2px]'>Y</span>
+      <span className='inline-block hover:text-[var(--hover-bg)] transition-all duration-300 hover:translate-y-[-2px]'>A</span>
+      <span className='inline-block hover:text-[var(--hover-bg)] transition-all duration-300 hover:translate-y-[-2px]'>N</span>
     </Link>
 
 
-<div className='text-2xl flex gap-10'>
+    <div className='text-2xl flex gap-8'>
+          <a 
+            href="mailto:work.aryan26@gmail.com" 
+            target="_blank"
+            rel="noopener noreferrer" 
+            className='text-[var(--text-color)] hover:text-[var(--hover-bg)] duration-300 transform hover:scale-110 hover:rotate-6 hidden lg:block'
+          >
+            <MdEmail />
+          </a>
+          
+          <a 
+            href="https://www.linkedin.com/in/aryan-h/" 
+            target="_blank"
+            rel="noopener noreferrer" 
+            className='text-[var(--text-color)] hover:text-[var(--hover-bg)] duration-300 transform hover:scale-110 hover:rotate-6 hidden lg:block  '
+          >
+            <FaLinkedin/>
+          </a>
+          
+          <a 
+            href="https://github.com/Shonty266" 
+            target="_blank"
+            rel="noopener noreferrer" 
+            className='text-[var(--text-color)] hover:text-[var(--hover-bg)] duration-300 transform hover:scale-110 hover:rotate-6 hidden lg:block'
+          >
+            <FaGithubSquare/>
+          </a>
+          
+          <a 
+            href="https://www.behance.net/aryanh" 
+            target="_blank"
+            rel="noopener noreferrer" 
+            className='text-[var(--text-color)] hover:text-[var(--hover-bg)] duration-300 transform hover:scale-110 hover:rotate-6 hidden lg:block'
+          >
+            <FaBehanceSquare/>
+          </a>
 
-  <a href="mailto:work.aryan26@gmail.com" target="_blank"
-          rel="noopener noreferrer" className='hover:text-[#a0b1ba] duration-500 hidden lg:block'><MdEmail /></a>
-  
-  <a href="https://www.linkedin.com/in/aryan-h/" target="_blank"
-          rel="noopener noreferrer" className='hover:text-[#a0b1ba] duration-500 hidden lg:block'><FaLinkedin/></a>
-  
-  <a href="https://github.com/Shonty266" target="_blank"
-          rel="noopener noreferrer" className='hover:text-[#a0b1ba] duration-500 hidden lg:block'><FaGithubSquare/></a>
-  
-  <a href="https://www.behance.net/aryanh" target="_blank"
-          rel="noopener noreferrer" className='hover:text-[#a0b1ba] duration-500 hidden lg:block'><FaBehanceSquare/></a>
-
-
-  <div 
+          <div 
         onClick={() => setNav(!nav)} 
         className='lg:hidden flex cursor-pointer justify-start'
       >
         {nav ? <IoMdClose /> : <HiMenu />}
       </div>
-
-
-</div>
+        </div>
        
 
         
 
 <div 
-  className={`menu font-navLinks text-[17px] absolute w-[90%] font-bold flex flex-col items-center shadow-md bg-[var(--project-bg)] rounded-lg z-40 duration-500 ease-in-out transform ${nav ? 'top-24 opacity-100 left-1/2 -translate-x-1/2' : 'top-[-200%] opacity-0 left-1/2 -translate-x-1/2'} py-2 rounded-lg`}
+  className={`menu font-navLinks text-[17px] absolute w-[90%] font-bold flex flex-col items-center shadow-md bg-[var(--project-bg)] rounded-lg z-[100] duration-500 ease-in-out transform ${nav ? 'top-24 opacity-100 left-1/2 -translate-x-1/2' : 'top-[-200%] opacity-0 left-1/2 -translate-x-1/2'} py-2 rounded-lg`}
 >
         <Link to='/' className='hover:text-[#a0b1ba] duration-500 py-2'>
           Work

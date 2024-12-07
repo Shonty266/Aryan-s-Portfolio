@@ -4,7 +4,9 @@ import Moon from './moon.svg';
 
 const DarkMode = () => {
     const [isDarkMode, setIsDarkMode] = useState(() => {
-        return localStorage.getItem('theme') === 'dark';
+        // Default to dark mode
+        const savedTheme = localStorage.getItem('theme');
+        return savedTheme === null ? true : savedTheme === 'dark';
     });
 
     useEffect(() => {

@@ -1,17 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import { IoIosArrowDown } from 'react-icons/io';
 import { useGSAP } from '@gsap/react';
-// import Project from '../Project/Project'; 
 import { Link } from 'react-router-dom';
+import { Draggable } from 'gsap/Draggable';
 
-
-gsap.registerPlugin(ScrollToPlugin);
+gsap.registerPlugin(ScrollToPlugin, Draggable);
 
 const Hero = () => {
   const textRefs = useRef([]);
-  const projectRef = useRef(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     textRefs.current.forEach((text) => {
@@ -38,43 +36,145 @@ const Hero = () => {
         textAnimation.kill();
       };
     });
+
+    setTimeout(() => {
+      const icons = document.querySelectorAll('.floating-icon');
+      const bounds = containerRef.current.getBoundingClientRect();
+      const screenHeight = window.innerHeight - 130;
+
+      if (window.innerWidth <= 768) {
+        // Calculate positions to span full width
+        const positions = [
+          { x: bounds.width * 0.1 },  // 10% from left
+          { x: bounds.width * 0.3 },  // 30% from left
+          { x: bounds.width * 0.5 },  // center
+          { x: bounds.width * 0.7 },  // 70% from left
+          { x: bounds.width * 0.9 },  // 90% from left
+          { x: bounds.width * 0.2 }   // 20% from left for the last icon
+        ];
+
+        icons.forEach((icon, index) => {
+          gsap.set(icon, {
+            x: positions[index].x - (icon.offsetWidth / 2), // Center the icon at position
+            y: -100,
+            opacity: 0,
+            cursor: 'move'
+          });
+
+          // Add bouncing animation
+          gsap.to(icon, {
+            y: screenHeight - 200,
+            opacity: 1,
+            duration: 1.5,
+            ease: "bounce.out", // Add bounce effect
+            delay: index * 0.2,
+            onComplete: () => {
+              // Add a small bounce after landing
+              gsap.to(icon, {
+                y: screenHeight - 150,
+                duration: 0.2,
+                ease: "power2.out",
+                yoyo: true,
+                repeat: 1
+              });
+
+              const draggable = Draggable.create(icon, {
+                type: "x,y",
+                bounds: containerRef.current,
+                inertia: true,
+                onDragStart: function() {
+                  this.target.style.zIndex = "20";
+                  gsap.to(this.target, {
+                    scale: 1.1,
+                    boxShadow: '0 0 10px rgba(0,0,0,0.2)',
+                    duration: 0.2
+                  });
+                },
+                onDragEnd: function() {
+                  this.target.style.zIndex = "15";
+                  gsap.to(this.target, {
+                    scale: 1,
+                    boxShadow: 'none',
+                    duration: 0.2
+                  });
+                }
+              })[0];
+
+              draggable.enable();
+            }
+          });
+        });
+
+      } else {
+        const handleMouseMove = (e) => {
+          const { clientX, clientY } = e;
+          const centerX = bounds.left + bounds.width / 2;
+          const centerY = bounds.top + bounds.height / 2;
+
+          icons.forEach((image) => {
+            const speed = image.getAttribute('data-speed');
+            const x = (centerX - clientX) * speed;
+            const y = (centerY - clientY) * speed;
+            
+            const maxX = bounds.width / 4;
+            const maxY = bounds.height / 4;
+            const boundedX = Math.max(Math.min(x, maxX), -maxX);
+            const boundedY = Math.max(Math.min(y, maxY), -maxY);
+            
+            gsap.to(image, {
+              x: boundedX,
+              y: boundedY,
+              duration: 1,
+              ease: 'power2.out'
+            });
+          });
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+      }
+    }, 800);
   }, []);
 
-  const scrollToProject = (event) => {
-    event.preventDefault();
-    if (projectRef.current) {
-      gsap.to(window, { duration: 1, scrollTo: projectRef.current.offsetTop });
-    }
-  };
-
-const tl = gsap.timeline()
+  const tl = gsap.timeline()
 
   useGSAP(() => {
     tl.from('.hero .intro-text', {
-      opacity:0,
-      delay:1,
+      opacity: 0,
+      delay: 1,
       stagger: 0.2,
       duration: 1
     });
-    tl.from('#project-arrow', {
-      opacity:0,
-      duration: 1
+    tl.from('.floating-icon', {
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.2,
+      ease: 'power2.out'
     });
-    
-    
-    
   }, []);
 
   return (
-    <div className=" relative " style={{ height: 'calc(100vh - 14rem)'}}>
-      <div className="hero flex flex-col items-center text-center px-4 justify-center pt-28 pb-10">
+    <div className="relative h-[calc(100vh-13rem)] overflow-hidden rounded-lg" ref={containerRef}>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" 
+           className="floating-icon absolute w-20 md:w-16 h-20 md:h-16 top-[10%] left-[12%] cursor-move z-[11]" data-speed="0.05" alt="HTML" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" 
+           className="floating-icon absolute w-20 md:w-16 h-20 md:h-16 top-[10%] right-[15%] cursor-move z-[12]" data-speed="0.05" alt="CSS" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" 
+           className="floating-icon absolute w-20 md:w-16 h-20 md:h-16 bottom-[40%] left-[20%] z-[16]" data-speed="0.05" alt="JavaScript" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" 
+           className="floating-icon absolute w-20 md:w-16 h-20 md:h-16 bottom-[2%] left-[8%] z-[15]" data-speed="0.05" alt="Tailwind" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" 
+           className="floating-icon absolute w-20 md:w-16 h-20 md:h-16 lg:bottom-[30%] lg:right-[15%] z-[13]" data-speed="0.05" alt="Figma" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" 
+           className="floating-icon absolute w-20 md:w-16 h-20 md:h-16 lg:bottom-[10%] lg:right-[25%] z-[14]" data-speed="0.05" alt="React" />
+      <div className="hero flex flex-col items-center text-center px-4 justify-center pt-28 pb-10 mx-auto max-w-3xl relative z-10">
         <h1
           className="intro-text text-3xl font-bold leading-normal cursor-default"
           ref={(el) => {
             if (el) textRefs.current[0] = el;
           }}
         >
-          Hello <span className="wave ">👋</span>, My name is <span className='name'>Aryan</span>
+          Hello <span className="wave">👋</span>, My name is <span className='name'>Aryan</span>
         </h1>
         <h2
           className="intro-text text-md leading-normal mt-2"
@@ -87,20 +187,6 @@ const tl = gsap.timeline()
         <h3 className="intro-text text-[#a0b1ba] font-semibold mt-4">
           Scroll down to see my work!
         </h3>
-        <div className='intro-text flex w-full justify-center'>
-        <Link
-          to="#project"
-          onClick={scrollToProject}
-          // className="px-2 py-5 hover:[bg-[var(--hover-bg)]] duration-500 bottom-0 absolute animate-bounce rounded-full border-[#a0b1ba] border-2"
-          className="px-2 py-5 duration-500 bottom-0 absolute rounded-full border-[#a0b1ba] border-2 hover:bg-[var(--hover-bg)] animate-bounce"
-          style={{ backgroundColor: 'var(--background-color)' }} // Default background color
-        >
-          <IoIosArrowDown className="text-2xl text-[#a0b1ba]" />
-        </Link></div>
-      </div>
-      
-      
-      <div ref={projectRef}>
       </div>
     </div>
   );
