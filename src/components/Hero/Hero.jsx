@@ -4,6 +4,12 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { useGSAP } from '@gsap/react';
 import { Link } from 'react-router-dom';
 import { Draggable } from 'gsap/Draggable';
+import HtmlIcon from '../../assets/images/3D Logos/HTML.png';
+import CssIcon from '../../assets/images/3D Logos/CSS.png';
+import JsIcon from '../../assets/images/3D Logos/JavaScript.png';
+import TailwindIcon from '../../assets/images/3D Logos/Tailwind.png';
+import FigmaIcon from '../../assets/images/3D Logos/Figma.png';
+import ReactIcon from '../../assets/images/3D Logos/React.png';
 
 gsap.registerPlugin(ScrollToPlugin, Draggable);
 
@@ -155,18 +161,18 @@ const Hero = () => {
 
   return (
     <div className="relative h-[calc(100vh-13rem)] overflow-hidden rounded-lg" ref={containerRef}>
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" 
-           className="floating-icon absolute w-20 md:w-16 h-20 md:h-16 top-[10%] left-[12%] cursor-move z-[11]" data-speed="0.05" alt="HTML" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" 
-           className="floating-icon absolute w-20 md:w-16 h-20 md:h-16 top-[10%] right-[15%] cursor-move z-[12]" data-speed="0.05" alt="CSS" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" 
-           className="floating-icon absolute w-20 md:w-16 h-20 md:h-16 bottom-[40%] left-[20%] z-[16]" data-speed="0.05" alt="JavaScript" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" 
-           className="floating-icon absolute w-20 md:w-16 h-20 md:h-16 bottom-[2%] left-[8%] z-[15]" data-speed="0.05" alt="Tailwind" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" 
-           className="floating-icon absolute w-20 md:w-16 h-20 md:h-16 lg:bottom-[30%] lg:right-[15%] z-[13]" data-speed="0.05" alt="Figma" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" 
-           className="floating-icon absolute w-20 md:w-16 h-20 md:h-16 lg:bottom-[10%] lg:right-[25%] z-[14]" data-speed="0.05" alt="React" />
+      <img src={HtmlIcon} 
+           className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 top-[10%] left-[12%] cursor-move z-[11]" data-speed="0.05" alt="HTML" />
+      <img src={CssIcon} 
+           className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 top-[10%] right-[15%] cursor-move z-[12]" data-speed="0.05" alt="CSS" />
+      <img src={JsIcon} 
+           className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 bottom-[40%] left-[20%] z-[16]" data-speed="0.05" alt="JavaScript" />
+      <img src={TailwindIcon} 
+           className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 bottom-[2%] left-[8%] z-[15]" data-speed="0.05" alt="Tailwind" />
+      <img src={FigmaIcon} 
+           className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:bottom-[30%] lg:right-[10%] z-[13]" data-speed="0.05" alt="Figma" />
+      <img src={ReactIcon} 
+           className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:bottom-[10%] lg:right-[25%] z-[14]" data-speed="0.05" alt="React" />
       <div className="hero flex flex-col items-center text-center px-4 justify-center pt-28 pb-10 mx-auto max-w-3xl relative z-10">
         <h1
           className="intro-text text-3xl font-bold leading-normal cursor-default"
