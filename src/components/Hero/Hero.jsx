@@ -53,10 +53,10 @@ const Hero = () => {
         const positions = [
           { x: bounds.width * 0.1 },  // 10% from left
           { x: bounds.width * 0.2 },  // 30% from left
-          { x: bounds.width * 0.3 },  // center
-          { x: bounds.width * 0.4 },  // 70% from left
-          { x: bounds.width * 0.5 },  // 90% from left
-          { x: bounds.width * 0.6 }   // 20% from left for the last icon
+          { x: bounds.width * 0.4 },  // center
+          { x: bounds.width * 0.6 },  // 70% from left
+          { x: bounds.width * 0.8 },  // 90% from left
+          { x: bounds.width * 0.9 }   // 20% from left for the last icon
         ];
 
         icons.forEach((icon, index) => {
