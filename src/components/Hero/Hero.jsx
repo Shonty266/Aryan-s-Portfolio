@@ -46,50 +46,51 @@ const Hero = () => {
     setTimeout(() => {
       const icons = document.querySelectorAll('.floating-icon');
       const bounds = containerRef.current.getBoundingClientRect();
-      const screenHeight = window.innerHeight - 130;
+      const containerHeight = bounds.height;
 
       if (window.innerWidth <= 768) {
-        // Calculate positions to span full width
+        // Fixed positions for mobile layout
         const positions = [
-          { x: bounds.width * 0.1 },  // 10% from left
-          { x: bounds.width * 0.2 },  // 30% from left
-          { x: bounds.width * 0.4 },  // center
-          { x: bounds.width * 0.6 },  // 70% from left
-          { x: bounds.width * 0.8 },  // 90% from left
-          { x: bounds.width * 0.9 }   // 20% from left for the last icon
+          { x: bounds.width * 0.1 },  // HTML icon - 15% from left
+          { x: bounds.width * 0.75 },  // CSS icon - 85% from left 
+          { x: bounds.width * 0.85 },  // JavaScript icon - 75% from left
+          { x: bounds.width * 0.35 },  // Tailwind icon - 65% from left
+          { x: bounds.width * 0.55 },  // Figma icon - 85% from left
+          { x: bounds.width * 0.25 }   // React icon - 95% from left
         ];
 
         icons.forEach((icon, index) => {
+          // Set initial position and properties for each icon
           gsap.set(icon, {
             x: positions[index].x - (icon.offsetWidth / 2), // Center the icon at position
-            y: -100,
+            y: 0, // Start from top
             opacity: 0,
-            cursor: 'move'
+            cursor: 'move',
+            zIndex: 15 // Set initial zIndex
           });
 
-          // Add bouncing animation
+          // Primary bounce animation - Icons fall from top and bounce
           gsap.to(icon, {
-            y: screenHeight - 200,
+            y: containerHeight * 0.8, // Adjust fall height to 80% of container height
             opacity: 1,
             duration: 1.5,
-            ease: "bounce.out", // Add bounce effect
-            delay: index * 0.2,
+            ease: "bounce.out", // Bounce easing for realistic physics
+            delay: index * 0.2, // Stagger the animations
             onComplete: () => {
-              // Add a small bounce after landing
-              gsap.to(icon, {
-                y: screenHeight - 150,
-                duration: 0.2,
-                ease: "power2.out",
-                yoyo: true,
-                repeat: 1
-              });
-
+              // Make icons draggable after bounce animation completes
               const draggable = Draggable.create(icon, {
                 type: "x,y",
                 bounds: containerRef.current,
                 inertia: true,
                 onDragStart: function() {
-                  this.target.style.zIndex = "20";
+                  // Bring dragged icon to front
+                  const allIcons = document.querySelectorAll('.floating-icon');
+                  let maxZ = 15;
+                  allIcons.forEach(icon => {
+                    const z = parseInt(window.getComputedStyle(icon).zIndex);
+                    maxZ = Math.max(maxZ, z);
+                  });
+                  gsap.set(this.target, { zIndex: maxZ + 1 });
                   gsap.to(this.target, {
                     scale: 1.1,
                     boxShadow: '0 0 10px rgba(0,0,0,0.2)',
@@ -97,7 +98,7 @@ const Hero = () => {
                   });
                 },
                 onDragEnd: function() {
-                  this.target.style.zIndex = "15";
+                  // Keep the elevated zIndex after drag
                   gsap.to(this.target, {
                     scale: 1,
                     boxShadow: 'none',
@@ -160,19 +161,44 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative h-[calc(100vh-13rem)] overflow-hidden rounded-lg" ref={containerRef}>
-      <img src={HtmlIcon} 
-           className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 top-[10%] left-[12%] cursor-move z-[11]" data-speed="0.05" alt="HTML" />
-      <img src={CssIcon} 
-           className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 top-[10%] right-[15%] cursor-move z-[12]" data-speed="0.05" alt="CSS" />
-      <img src={JsIcon} 
-           className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 bottom-[40%] left-[20%] z-[16]" data-speed="0.05" alt="JavaScript" />
-      <img src={TailwindIcon} 
-           className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 bottom-[2%] left-[8%] z-[15]" data-speed="0.05" alt="Tailwind" />
-      <img src={FigmaIcon} 
-           className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:bottom-[30%] lg:right-[10%] z-[13]" data-speed="0.05" alt="Figma" />
-      <img src={ReactIcon} 
-           className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:bottom-[10%] lg:right-[25%] z-[14]" data-speed="0.05" alt="React" />
+    <div className="relative h-[calc(100vh-10rem)] overflow-hidden rounded-lg" ref={containerRef}>
+      
+      <img
+        src={HtmlIcon}
+        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[10%] lg:left-[12%] cursor-move z-[15]"
+        data-speed="0.05"
+        alt="HTML"
+      />
+      <img
+        src={TailwindIcon}
+        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[75%] lg:left-[18%] cursor-move z-[15]"
+        data-speed="0.05"
+        alt="Tailwind"
+      />
+      <img
+        src={JsIcon}
+        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[15%] lg:right-[6%] cursor-move z-[15]"
+        data-speed="0.05"
+        alt="JavaScript"
+      />
+      <img
+        src={FigmaIcon}
+        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[80%] lg:right-[10%] cursor-move z-[15]"
+        data-speed="0.05"
+        alt="Figma"
+      />
+      <img
+        src={CssIcon}
+        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[35%] lg:left-[24%] cursor-move z-[15]"
+        data-speed="0.05"
+        alt="CSS"
+      />
+      <img
+        src={ReactIcon}
+        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[45%] lg:right-[26%] cursor-move z-[15]"
+        data-speed="0.05"
+        alt="React"
+      />
       <div className="hero flex flex-col items-center text-center px-4 justify-center pt-28 pb-10 mx-auto max-w-3xl relative z-10">
         <h1
           className="intro-text text-3xl font-bold leading-normal cursor-default"
