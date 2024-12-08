@@ -190,7 +190,9 @@ const Projects = () => {
                         {item.location}
                       </span>
                       <a
-                        href="#top"
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="p-2 hover:border-white/60 rounded-lg transition-all duration-300 group/up flex items-center"
                       >
                         <svg

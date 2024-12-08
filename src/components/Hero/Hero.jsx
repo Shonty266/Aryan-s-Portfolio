@@ -199,7 +199,7 @@ const Hero = () => {
         data-speed="0.05"
         alt="React"
       />
-      <div className="hero flex flex-col items-center text-center px-4 justify-center pt-28 pb-10 mx-auto max-w-3xl relative z-10">
+      <div className="hero w-full h-full flex flex-col items-center text-center px-4 pt-28 pb-10 mx-auto max-w-3xl relative z-10">
         <h1
           className="intro-text text-3xl font-bold leading-normal cursor-default"
           ref={(el) => {
@@ -219,6 +219,19 @@ const Hero = () => {
         <h3 className="intro-text text-[#a0b1ba] font-semibold mt-4">
           Scroll down to see my work!
         </h3>
+        <div className='w-full h-full flex justify-center items-center'>
+        <svg 
+          className="animate-bounce w-10 h-10 border-2 border-current rounded-full p-1"
+          fill="none" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          strokeWidth="2" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+        </div>
       </div>
     </div>
   );
