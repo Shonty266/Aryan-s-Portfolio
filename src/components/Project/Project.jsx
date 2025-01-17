@@ -104,7 +104,7 @@ const Projects = () => {
         </div>
 
         <div className="flex items-start justify-start gap-4 w-full pl-4 mb-8">
-          <button
+          {/* <button
             onClick={() => {
               setActiveType("");
               setProjects(data);
@@ -116,8 +116,8 @@ const Projects = () => {
             }`}
           >
             All Projects
-          </button>
-          
+          </button> */}
+{/*           
           <button
             onClick={() => filterType("frontend")}
             className={`filter-button relative px-4 py-1.5 rounded-lg font-semibold transition-all duration-300 ease-in-out ${
@@ -127,9 +127,9 @@ const Projects = () => {
             }`}
           >
             Frontend
-          </button>
+          </button> */}
           
-          <button
+          {/* <button
             onClick={() => filterType("uiux")}
             className={`filter-button relative px-4 py-1.5 rounded-lg font-semibold transition-all duration-300 ease-in-out ${
               activeType === "uiux"
@@ -138,7 +138,7 @@ const Projects = () => {
             }`}
           >
             UI/UX
-          </button>
+          </button> */}
         </div>
 
         <div className="w-full flex flex-col justify-center items-center" id="projects">

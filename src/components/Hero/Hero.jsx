@@ -49,41 +49,36 @@ const Hero = () => {
       const containerHeight = bounds.height;
 
       if (window.innerWidth <= 768) {
-        // Fixed positions for mobile layout
         const positions = [
-          { x: bounds.width * 0.1 },  // HTML icon - 15% from left
-          { x: bounds.width * 0.75 },  // CSS icon - 85% from left 
-          { x: bounds.width * 0.85 },  // JavaScript icon - 75% from left
-          { x: bounds.width * 0.35 },  // Tailwind icon - 65% from left
-          { x: bounds.width * 0.55 },  // Figma icon - 85% from left
-          { x: bounds.width * 0.25 }   // React icon - 95% from left
+          { x: bounds.width * 0.1 },  
+          { x: bounds.width * 0.75 },  
+          { x: bounds.width * 0.85 },  
+          { x: bounds.width * 0.35 }, 
+          { x: bounds.width * 0.55 },  
+          { x: bounds.width * 0.25 }   
         ];
 
         icons.forEach((icon, index) => {
-          // Set initial position and properties for each icon
           gsap.set(icon, {
-            x: positions[index].x - (icon.offsetWidth / 2), // Center the icon at position
-            y: 0, // Start from top
+            x: positions[index].x - (icon.offsetWidth / 2), 
+            y: 0, 
             opacity: 0,
             cursor: 'move',
-            zIndex: 15 // Set initial zIndex
+            zIndex: 15 
           });
 
-          // Primary bounce animation - Icons fall from top and bounce
           gsap.to(icon, {
-            y: containerHeight * 0.8, // Adjust fall height to 80% of container height
+            y: containerHeight * 0.8, 
             opacity: 1,
             duration: 1.5,
-            ease: "bounce.out", // Bounce easing for realistic physics
-            delay: index * 0.2, // Stagger the animations
+            ease: "bounce.out", 
+            delay: index * 0.2, 
             onComplete: () => {
-              // Make icons draggable after bounce animation completes
               const draggable = Draggable.create(icon, {
                 type: "x,y",
                 bounds: containerRef.current,
                 inertia: true,
                 onDragStart: function() {
-                  // Bring dragged icon to front
                   const allIcons = document.querySelectorAll('.floating-icon');
                   let maxZ = 15;
                   allIcons.forEach(icon => {
@@ -98,7 +93,6 @@ const Hero = () => {
                   });
                 },
                 onDragEnd: function() {
-                  // Keep the elevated zIndex after drag
                   gsap.to(this.target, {
                     scale: 1,
                     boxShadow: 'none',
@@ -160,6 +154,14 @@ const Hero = () => {
     });
   }, []);
 
+  const scrollToSection = (event) => {
+    event.preventDefault();
+    const targetSection = document.querySelector('#project');
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="relative h-[calc(100vh-10rem)] overflow-hidden rounded-lg" ref={containerRef}>
       
@@ -214,24 +216,26 @@ const Hero = () => {
             if (el) textRefs.current[1] = el;
           }}
         >
-          I am a Frontend Developer &  UI/UX Designer based in Gujarat, India.
+          I am a Frontend Web Developer based in Gujarat, India.
         </h2>
         <h3 className="intro-text text-[#a0b1ba] font-semibold mt-4">
           Scroll down to see my work!
         </h3>
-        <div className='w-full h-full flex justify-center items-center'>
-        <svg 
-          className="animate-bounce w-10 h-10 border-2 border-current rounded-full p-1"
-          fill="none" 
-          strokeLinecap="round" 
-          strokeLinejoin="round" 
-          strokeWidth="2" 
-          viewBox="0 0 24 24" 
-          stroke="currentColor"
-        >
-          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
-        </div>
+        <div className='w-full h-full flex justify-center items-end z-50'>
+        <Link to="/" onClick={scrollToSection}>
+          <svg 
+            className="animate-bounce w-8 h-8 border-2 border-current rounded-full p-1"
+            fill="none" 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth="2" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </Link>
+      </div>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import React, {useEffect, useRef, useState} from 'react'
 import gsap from 'gsap'
-import contactImage from '../../assets/images/contact.svg'
+import contactImage from '../../assets/images/contact.png'
 import { CgClose } from "react-icons/cg";
 import { useGSAP } from '@gsap/react'
 import Scroll from '../Scroll/Scroll'
@@ -131,52 +131,92 @@ const Contact = () => {
     </div>
 </div>
 
-        <div className='contact flex gap-14 lg:px-20 px-4 py-10 items-center lg:flex-row flex-col'>
-          <div className='flex flex-col gap-4 lg:w-1/2 w-full'>
-            <h1 className='text-4xl font-bold text-center lg:text-left' 
-            ref={(el) => {
-              if (el) textRefs.current[0] = el;
-            }}
-          >Get in Touch</h1>
-          
-          <form onSubmit={onSubmit}>
-            <div  className="flex flex-col items-between gap-4">
-    <input
-      type="text"
-      className="w-full h-[50px] pl-6 outline-none rounded-md border border-gray-300"
-      placeholder="Enter Your Name"
-      name="name"
-      onChange={handleNameChange}
-      required
-    />
-    <input type="hidden" name="subject" value={subject} />
-    <input
-      type="email"
-      className="w-full h-[50px] pl-6 outline-none rounded-md border border-gray-300"
-      placeholder="Enter Your Email"
-      name="email"
-      required
-    />
-    <textarea
-      className="w-full h-[150px] pl-6 pt-4 outline-none rounded-md border border-gray-300"
-      placeholder="Enter Your Message"
-      name="message"
-      required
-    />
-    <button
-      className="w-full py-3 rounded-md font-bold text-[#a0b1ba] hover:bg-[#d7dee2] border-[#a0b1ba] border-2 duration-500 text-xl hover:text-[#263238]"
-      type="submit"
+<div className='contact flex lg:px-20 px-4 py-10 items-center lg:flex-row flex-col'>
+  <div className='flex flex-col gap-4 lg:w-1/2 w-full'>
+    <h1 className='text-4xl font-bold text-center lg:text-left ' 
+      ref={(el) => {
+        if (el) textRefs.current[0] = el;
+      }}
     >
-      Send
-    </button>
-    </div>
-</form>
-
-          </div>
-          <div className='py-2 rounded-lg overflow-hidden lg:w-1/2 max-h-[450px] w-full shadow flex justify-center items-center'>
-          <img src={contactImage} alt="" className='w-full h-full object-cover' />
-          </div> 
+      Get in Touch
+    </h1>
+    
+    <form onSubmit={onSubmit}>
+      <div className="flex flex-col gap-4">
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            className="w-[90%] h-[50px] pl-6 outline-none rounded-md border border-gray-300 bg-[#272727] text-white"
+            placeholder="Enter Your Name"
+            name="name"
+            onChange={handleNameChange}
+            required
+          />
         </div>
+
+        <input type="hidden" name="subject" value={subject} />
+
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            className="w-[90%] h-[50px] pl-6 outline-none rounded-md border border-gray-300 bg-[#272727] text-white"
+            placeholder="Enter Your Email"
+            name="email"
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
+            Message
+          </label>
+          <textarea
+            id="message"
+            className="w-[90%] h-[100px] pl-6 pt-4 outline-none rounded-md border border-gray-300 bg-[#272727] text-white"
+            placeholder="Enter Your Message"
+            name="message"
+            required
+          />
+        </div>
+
+        <div>
+          <button
+            className="px-20 py-2 rounded-md font-bold text-[#a0b1ba] hover:bg-[#d7dee2] border-[#a0b1ba] border-2 duration-500 text-xl hover:text-[#263238]"
+            type="submit"
+          >
+            Send
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  {/* Second Half - Map Embedding */}
+  <div className="lg:w-1/2 w-full mt-10 lg:mt-0">
+  <div className="w-full h-[400px]">
+    {/* Embed Google Map */}
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118106.71772260574!2d73.09068413948843!3d22.322081830737332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc8ab91a3ddab%3A0xac39d3bfe1473fb8!2sVadodara%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1737133046553!5m2!1sen!2sin"
+      width="100%"
+      height="100%"
+      style={{ border: 0 }}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</div>
+
+</div>
+
 
         
 

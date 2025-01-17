@@ -5,13 +5,35 @@ import GoGlobeImage from '../assets/images/uiux/Go Globe.png';
 import DecoluxeImage from '../assets/images/uiux/Decoluxe.png';
 import ReceiptImage from '../assets/images/uiux/Receipt.png';
 import HomeVoyageImage from '../assets/images/uiux/HomeVoyage.png';
+import SmartCubeImage from '../assets/images/frontend/SmartCube.png';
 import { FaCog } from 'react-icons/fa'; 
 import React from 'react';
 
 
 export const data = [
+  
+  
   {
-    id: 8,
+    id: 5,
+    name: 'Smart Cube Landing Page',
+    category: 'frontend',
+    image: SmartCubeImage,
+    projectType: 'Frontend Project',
+    description: 'This is a a responsive landing page for an imaginary Brand Home Voyage, a real estate brand that specializes in buying, selling, and renting properties.', 
+    link: 'https://homevoyage.netlify.app/',  // Placeholder link as it's still in development
+    location:'View Live Project',
+   
+    skills: ['HTML', 'TailwindCSS', 'CSS' , 'JavaScript' ,'GSAP', 'Swiper.js', 'Three.js']
+  },
+  
+  
+  
+  
+  
+  
+  
+  {
+    id: 4,
     name: 'Home Voyage Landing Page',
     category: 'frontend',
     image: HomeVoyageImage,
@@ -23,34 +45,34 @@ export const data = [
     skills: ['HTML', 'TailwindCSS', 'CSS' , 'JavaScript' ,'GSAP', 'Swiper.js']
   },
  
+  // {
+  //   id: 7,
+  //   name: 'Home Voyage Landing Page Design',
+  //   category: 'uiux',
+  //   image: HomeVoyageImage,
+  //   projectType: 'UI/UX Design Project',
+  //   description: 'This is a landing page design for an imaginary real estate website that connects users with their dream properties effortlessly.', 
+  //   link:'https://www.behance.net/gallery/210294549/Home-Voyage-Real-Estate-Landing-Page-Design',
+  //   location:'View on Behance',
+  //   skills: ['Figma']
+
+
+  // },
+  // {
+  //   id: 6,
+  //   name: 'Digital Receipt Generator',
+  //   category: 'uiux',
+  //   image: ReceiptImage,
+  //   projectType: 'UI/UX Design Project',
+  //   description: 'This is a landing page design for a SaaS website that generates online receipts.', 
+  //   link:'https://www.behance.net/gallery/205200879/Landing-Page-Design-for-Digital-Receipt-Generator',
+  //   location:'View on Behance',
+  //   skills: ['Figma']
+
+
+  // },
   {
-    id: 7,
-    name: 'Home Voyage Landing Page Design',
-    category: 'uiux',
-    image: HomeVoyageImage,
-    projectType: 'UI/UX Design Project',
-    description: 'This is a landing page design for an imaginary real estate website that connects users with their dream properties effortlessly.', 
-    link:'https://www.behance.net/gallery/210294549/Home-Voyage-Real-Estate-Landing-Page-Design',
-    location:'View on Behance',
-    skills: ['Figma']
-
-
-  },
-  {
-    id: 6,
-    name: 'Digital Receipt Generator',
-    category: 'uiux',
-    image: ReceiptImage,
-    projectType: 'UI/UX Design Project',
-    description: 'This is a landing page design for a SaaS website that generates online receipts.', 
-    link:'https://www.behance.net/gallery/205200879/Landing-Page-Design-for-Digital-Receipt-Generator',
-    location:'View on Behance',
-    skills: ['Figma']
-
-
-  },
-  {
-    id: 5,
+    id: 3,
     name: 'Go Globe',
     category: 'frontend',
     image: GoGlobeFImage,
@@ -62,32 +84,32 @@ export const data = [
 
 
   },
-      {
-        id: 4,
-        name: 'Decoluxe Furniture',
-        category: 'uiux',
-        image: DecoluxeImage,
-        projectType: 'UI/UX Design Project',
-        description: 'Decoluxe offers a curated selection of premium furniture with an intuitive app experience for creating your dream home.', 
-        link:'https://www.behance.net/gallery/204747987/Decoluxe-Furnitures-UIUX-Design',
-        location:'View on Behance',
-        skills: ['Figma', 'Prototyping']
+      // {
+      //   id: 4,
+      //   name: 'Decoluxe Furniture',
+      //   category: 'uiux',
+      //   image: DecoluxeImage,
+      //   projectType: 'UI/UX Design Project',
+      //   description: 'Decoluxe offers a curated selection of premium furniture with an intuitive app experience for creating your dream home.', 
+      //   link:'https://www.behance.net/gallery/204747987/Decoluxe-Furnitures-UIUX-Design',
+      //   location:'View on Behance',
+      //   skills: ['Figma', 'Prototyping']
 
-      },
+      // },
 
-      {
-        id: 3,
-        name: 'Go Globe',
-        category: 'uiux',
-        image: GoGlobeImage,
-        projectType: 'UI/UX Design  Project',
-        description: 'GoGlobe is a website that masterfully blends vibrant brand identity with user-centric engagement, creating an immersive travel experience.', 
-        link:'https://www.behance.net/gallery/203676941/Go-Globe-Case-Study',
-        location:'View on Behance',
-        skills: ['Figma', 'Prototyping']
+      // {
+      //   id: 3,
+      //   name: 'Go Globe',
+      //   category: 'uiux',
+      //   image: GoGlobeImage,
+      //   projectType: 'UI/UX Design  Project',
+      //   description: 'GoGlobe is a website that masterfully blends vibrant brand identity with user-centric engagement, creating an immersive travel experience.', 
+      //   link:'https://www.behance.net/gallery/203676941/Go-Globe-Case-Study',
+      //   location:'View on Behance',
+      //   skills: ['Figma', 'Prototyping']
 
 
-      },
+      // },
       {
         id: 2,
         name: 'Furniture',

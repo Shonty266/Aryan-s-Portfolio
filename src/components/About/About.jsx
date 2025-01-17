@@ -91,7 +91,7 @@ My focus is on bringing user-centric design principles to life, creating intuiti
           <p>In my leisure hours, I dive into hobbies that add color and joy to my life. 🎮 Whether I’m adventuring through the virtual worlds of Roblox, 🎶 getting lost in the rhythms of diverse music genres, or 🎬 being swept away by the magic of animated movies, 📽️ these passions fuel my creativity and keep my imagination alive.</p>
           </div>
           </div>
-          <div className='py-2 rounded-lg overflow-hidden lg:w-1/2 w-full shadow-sm shadow-gray-500'>
+          <div className='py-2 rounded-lg overflow-hidden lg:w-1/2 w-full '>
             <img src = {aboutImage} alt="" srcset=""/>
           </div>
         </div>
