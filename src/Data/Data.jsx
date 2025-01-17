@@ -20,7 +20,7 @@ export const data = [
     image: SmartCubeImage,
     projectType: 'Frontend Project',
     description: 'This is a a responsive landing page for an imaginary Brand Home Voyage, a real estate brand that specializes in buying, selling, and renting properties.', 
-    link: 'https://homevoyage.netlify.app/',  // Placeholder link as it's still in development
+    link: 'https://smart-cube.netlify.app/',  // Placeholder link as it's still in development
     location:'View Live Project',
    
     skills: ['HTML', 'TailwindCSS', 'CSS' , 'JavaScript' ,'GSAP', 'Swiper.js', 'Three.js']
