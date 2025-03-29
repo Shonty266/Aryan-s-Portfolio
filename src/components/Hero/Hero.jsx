@@ -165,42 +165,42 @@ const Hero = () => {
   return (
     <div className="relative h-[calc(100vh-10rem)] overflow-hidden rounded-lg" ref={containerRef}>
       
-      <img
+      {/* <img
         src={HtmlIcon}
-        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[10%] lg:left-[12%] cursor-move z-[15]"
+        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[10%] lg:left-[12%] cursor-move z-[15] opacity-50"
         data-speed="0.05"
         alt="HTML"
       />
       <img
         src={TailwindIcon}
-        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[75%] lg:left-[18%] cursor-move z-[15]"
+        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[75%] lg:left-[18%] cursor-move z-[15] opacity-50"
         data-speed="0.05"
         alt="Tailwind"
       />
       <img
         src={JsIcon}
-        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[15%] lg:right-[6%] cursor-move z-[15]"
+        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[15%] lg:right-[6%] cursor-move z-[15] opacity-50"
         data-speed="0.05"
         alt="JavaScript"
       />
       <img
         src={FigmaIcon}
-        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[80%] lg:right-[10%] cursor-move z-[15]"
+        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[80%] lg:right-[10%] cursor-move z-[15] opacity-50"
         data-speed="0.05"
         alt="Figma"
       />
       <img
         src={CssIcon}
-        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[35%] lg:left-[24%] cursor-move z-[15]"
+        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[35%] lg:left-[24%] cursor-move z-[15] opacity-50"
         data-speed="0.05"
         alt="CSS"
       />
       <img
         src={ReactIcon}
-        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[45%] lg:right-[26%] cursor-move z-[15]"
+        className="floating-icon absolute w-24 md:w-20 h-24 md:h-20 lg:top-[45%] lg:right-[26%] cursor-move z-[15] opacity-50"
         data-speed="0.05"
         alt="React"
-      />
+      /> */}
       <div className="hero w-full h-full flex flex-col items-center text-center px-4 pt-28 pb-10 mx-auto max-w-3xl relative z-10">
         <h1
           className="intro-text text-3xl font-bold leading-normal cursor-default"
