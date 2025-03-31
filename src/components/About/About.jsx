@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react'
 import Navbar from '../Navbar/Navbar'
-import aboutImage from '../../assets/images/about.svg'
+import aboutImage from '../../assets/images/image.png'
 import Footer from '../Footer/Footer'
 import Scroll from '../Scroll/Scroll'
 import gsap from 'gsap'

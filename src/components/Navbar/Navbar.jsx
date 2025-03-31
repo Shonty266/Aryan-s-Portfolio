@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 // import { delay } from 'framer-motion';
-import Resume from '../../assets/Aryan-s Resume.pdf'
+import Resume from '../../assets/Aryan_Frontend_Resume.pdf'
 
 
 
